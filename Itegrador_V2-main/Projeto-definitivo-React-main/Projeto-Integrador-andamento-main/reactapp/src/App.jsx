@@ -3,6 +3,9 @@ import Home from './pages/Autenticação/Home';
 import Criar_Conta from './pages/Autenticação/Criar_Conta';
 import Erro404 from './pages/Autenticação/Erro404';
 import Esqueceu_senha from './pages/Autenticação/Esqueceu_senha';
+import VerificacaoCodigo from './pages/Autenticação/Verificacao_recuperacao';
+import AlterarSenha from './pages/Autenticação/alteracao_senha'; 
+import CadastroRealizado from './pages/Autenticação/Tela_cadastrada'; 
 import Tela_inicial from './pages/Home/Tela';
 import Quizzes_tela from './pages/Home/Quizzes';
 import Meus_Certificados from './pages/Home/Certificados';
@@ -23,7 +26,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/Criar_Conta" element={<Criar_Conta/>} />
+        <Route path="/Tela_cadastrada" element={<CadastroRealizado/>} />
         <Route path="/Esqueceu_senha" element={<Esqueceu_senha/>} />
+        <Route path="/Verificacao_recuperacao" element={<VerificacaoCodigo/>} />
+        <Route path="/alteracao_senha" element={<AlterarSenha/>} />
         <Route path="/Home/Tela" element={<Tela_inicial/>} />
         <Route path="*" element={<Erro404/>} />
         <Route path="/Home/Quizzes" element={<Quizzes_tela/>} />

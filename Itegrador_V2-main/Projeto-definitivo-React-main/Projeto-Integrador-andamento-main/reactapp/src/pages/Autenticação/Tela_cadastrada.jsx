@@ -38,39 +38,30 @@ const Title = styled.h2`
   margin: 10px 0 20px;
   font-size: 22px;
   font-weight: bold;
-  color: #007bff;
+  color: #28a745;
 `;
 
-const Label = styled.label`
+const Message = styled.p`
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+`;
+
+const Button = styled(Link)`
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 14px;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  font-size: 14px;
-`;
-
-const LinkButton = styled(Link)`
-  display: block;
-  width: 100%;
   text-align: center;
   padding: 12px;
-  background-color: #28a745;
+  background-color: #007bff;
   color: white;
   font-weight: bold;
+  border: none;
   border-radius: 5px;
   text-decoration: none;
   font-size: 16px;
 
   &:hover {
-    background-color: #218838;
+    background-color: #0056b3;
   }
 `;
 
@@ -82,19 +73,18 @@ const TopText = styled.div`
   color: #ccc;
 `;
 
-export default function Esqueceu_senha() {
+export default function CadastroRealizado() {
   return (
     <TelaStyled>
-      <TopText>Enviar código</TopText>
+      <TopText>Cadastro</TopText>
       <Card>
         <BackLink to="/">
           <FiArrowLeft size={15} />
           Voltar início
         </BackLink>
-        <Title>Recuperação de senha</Title>
-        <Label>Digite seu e-mail</Label>
-        <Input type="email" placeholder="Digite seu e-mail" />
-        <LinkButton to="/Verificacao_recuperacao">Receber link de verificação</LinkButton>
+        <Title>Cadastro Realizado!</Title>
+        <Message>Seu cadastro foi concluído com sucesso. Seja bem-vindo!</Message>
+        <Button to="/">Ir para login</Button>
       </Card>
     </TelaStyled>
   );

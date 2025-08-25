@@ -41,20 +41,22 @@ const Title = styled.h2`
   color: #007bff;
 `;
 
-const Label = styled.label`
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 14px;
+const Message = styled.p`
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
 `;
 
 const LinkButton = styled(Link)`
@@ -82,19 +84,35 @@ const TopText = styled.div`
   color: #ccc;
 `;
 
-export default function Esqueceu_senha() {
+const ResendLink = styled.a`
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export default function VerificacaoCodigo() {
   return (
     <TelaStyled>
-      <TopText>Enviar código</TopText>
+      <TopText>Recuperação</TopText>
       <Card>
         <BackLink to="/">
           <FiArrowLeft size={15} />
-          Voltar início
+          Voltar
         </BackLink>
-        <Title>Recuperação de senha</Title>
-        <Label>Digite seu e-mail</Label>
-        <Input type="email" placeholder="Digite seu e-mail" />
-        <LinkButton to="/Verificacao_recuperacao">Receber link de verificação</LinkButton>
+        <Title>Verifique seu Código</Title>
+        <Message>
+          Um código foi enviado para sua caixa de entrada. Aguarde alguns instantes e insira-o abaixo para continuar a recuperação de senha.
+        </Message>
+        <Input type="text" maxLength="6" placeholder="••••••" />
+        <LinkButton to="/alteracao_senha">Confirmar código</LinkButton>
+        <ResendLink href="#">Reenviar código</ResendLink>
       </Card>
     </TelaStyled>
   );
